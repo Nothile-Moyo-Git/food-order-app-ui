@@ -14,7 +14,6 @@ function App() {
         >
           Moyos Munch!!
         </a>
-        <Header></Header>
       </header>
     </div>
   );
