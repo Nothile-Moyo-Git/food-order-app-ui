@@ -12,7 +12,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Moyos Munch!!!
+          Moyos Munch!!
         </a>
         <Header></Header>
       </header>
