@@ -1,3 +1,4 @@
+import Header from './Components/Layout/Header';
 import logo from './logo.svg';
 import './styles/App.css';
 
@@ -13,6 +14,7 @@ function App() {
         >
           Moyos Munch!!
         </a>
+        <Header></Header>
       </header>
     </div>
   );
