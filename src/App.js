@@ -12,8 +12,8 @@ function App() {
           rel="noopener noreferrer"
         >
           Moyos Munch!!
-          Ross Kemp
         </a>
+        Ross Kemp
       </header>
     </div>
   );
