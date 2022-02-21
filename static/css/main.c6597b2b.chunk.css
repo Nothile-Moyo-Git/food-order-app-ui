@@ -1,2 +1,0 @@
-@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap);*{box-sizing:border-box}html{font-family:"Noto Sans JP",sans-serif}body{margin:0;background-color:#fff}:root{font-size:16px}.header{position:fixed;display:flex;justify-content:space-between;align-items:center;width:100%;padding:0 10%;background-color:teal;z-index:3}h2{color:#000}.main-image{width:100%;overflow:hidden}img{max-height:20rem;width:100%;object-fit:cover}
-/*# sourceMappingURL=main.c6597b2b.chunk.css.map */
