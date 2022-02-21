@@ -13,7 +13,7 @@ function App() {
         >
           Moyos Munch!!
         </a>
-        Ross Kemp
+        Ross Kemp!
       </header>
     </div>
   );
