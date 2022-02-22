@@ -1,22 +1,10 @@
-import logo from './logo.svg';
-import './styles/App.css';
-import Header from './components/Header';
+import './styles/App.scss';
+import Header from './components/Layout/Header';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Moyos Munch!!
-        </a>
-        Ross Kemp!!
         <Header></Header>
-      </header>
     </div>
   );
 }
