@@ -1,3 +1,5 @@
+@import '../../styles/shared.scss';
+
 div{
     color: white;
 }
@@ -6,9 +8,41 @@ div{
 
     display: flex;
     align-items: center;
-
+    background-color: $brand_color_thirteen;
+    border: 2px solid white;
+    border-radius: 2rem;
+    padding: 0.5rem 2rem;
+    transition: $transition_quarter_second;
+    transform: scale(1);
+    
     & svg{
         margin-right: 0.5rem;
+    }
+
+    & h3{
+        margin: 0;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+        }
+    
+        70% {
+            transform: scale(1.1);
+            box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+        }
+    
+        100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        }
+    }    
+
+    &:hover{ 
+        transform: scale(1.1);
+        animation: pulse 2s infinite;
     }
 
 }

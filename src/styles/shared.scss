@@ -9,6 +9,9 @@ $brand_color_seven: #009ffd;
 $brand_color_eight: #2a2a72;
 $brand_color_nine: #647dee;
 $brand_color_ten: #7f53ac;
+$brand_color_eleven: #09c6f9;
+$brand_color_twelve: #045de9;
+$brand_color_thirteen:  #03a0cd;
 
 // Box shadows
 $box_shadow_one : 0px 6px 12px rgba(0,0,0,0.2);
@@ -22,6 +25,9 @@ $padding_x_10: 0% 10% 0% 10%;
 // Images
 $image_size_rotate : calc(100% + 2rem);
 
+// transitions
+$transition_quarter_second : all 0.25s linear;
+
 // Breakpoints
 @mixin breakpoint($point) {
 
@@ -33,3 +39,4 @@ $image_size_rotate : calc(100% + 2rem);
         @media ( min-width: 1024px ){ @content; }
     }
 }
+
