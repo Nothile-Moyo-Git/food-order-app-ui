@@ -17,6 +17,19 @@ $box_shadow_one : 0px 6px 12px rgba(0,0,0,0.2);
 $brand_font_color_one: #FFFFFF;
 
 // Padding
-$padding_x_10: 0% 10%;
+$padding_x_10: 0% 10% 0% 10%;
 
-// Margins
+// Images
+$image_size_rotate : calc(100% + 2rem);
+
+// Breakpoints
+@mixin breakpoint($point) {
+
+    @if $point == tablet{
+        @media ( min-width: 768px ){ @content; }
+    }
+
+    @else if $point == desktop{
+        @media ( min-width: 1024px ){ @content; }
+    }
+}
