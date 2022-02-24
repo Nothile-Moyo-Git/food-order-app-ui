@@ -1,7 +1,8 @@
-@use './shared.scss' as shared;
+@import 'shared.scss';
 
 .App {
   text-align: center;
+  width: 100vw;
 }
 
 .App-logo {

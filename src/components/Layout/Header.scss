@@ -25,19 +25,43 @@
 
   .main-image{
     width: 100%;
+    overflow-x: hidden;
+    height: 20rem;
+
+    @include breakpoint(tablet){
+      height: 25rem;
+    }
+
+    @include breakpoint(qhd){
+      height: 35rem;
+    }
+
+    @include breakpoint(uhd){
+      height: 45rem;
+    }
 
     & img{
       height: 15rem;
       width: $image_size_rotate;
       object-fit: cover;
       position: relative;
-      bottom: 5rem;
+      bottom: 1rem;
       right: 2rem;
-      transform: rotate(-5deg);
+      transform: rotate(-3deg);
 
       @include breakpoint(tablet){
-        height: 25rem;
+        height: 20rem;
       }
+
+      @include breakpoint(qhd){
+        height: 30rem;
+        bottom: 3rem;
+      }
+  
+      @include breakpoint(uhd){
+        height: 40rem;
+      }
+      
     }
 
   }

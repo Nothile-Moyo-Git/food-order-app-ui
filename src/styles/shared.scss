@@ -14,16 +14,18 @@ $brand_color_twelve: #045de9;
 $brand_color_thirteen:  #03a0cd;
 
 // Box shadows
-$box_shadow_one : 0px 6px 12px rgba(0,0,0,0.2);
+$box_shadow_one : 0px, 6px, 12px, rgba(0,0,0,0.2);
 
 // Typography
 $brand_font_color_one: #FFFFFF;
 
 // Padding
 $padding_x_10: 0% 10% 0% 10%;
+$padding_horizontal_mobile: 0rem 0.5rem 0rem 0.5rem;
+$page_container: 0% 5% 0% 5%;
 
 // Images
-$image_size_rotate : calc(100% + 2rem);
+$image_size_rotate : 110%;
 
 // transitions
 $transition_quarter_second : all 0.25s linear;
@@ -37,6 +39,14 @@ $transition_quarter_second : all 0.25s linear;
 
     @else if $point == desktop{
         @media ( min-width: 1024px ){ @content; }
+    }
+
+    @else if $point == qhd{
+        @media ( min-width: 2560px ){ @content; }
+    }
+
+    @else if $point == uhd{
+        @media ( min-width: 3840px ){ @content; }
     }
 }
 
