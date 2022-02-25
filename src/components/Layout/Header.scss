@@ -23,7 +23,8 @@
       font-size: 1.25rem;
 
       @include breakpoint( tablet ){
-        font-size: 2rem; 
+        font-size: 2rem;
+        color: white;
       }
 
       @include breakpoint( qhd ){
