@@ -24,7 +24,6 @@
 
       @include breakpoint( tablet ){
         font-size: 2rem;
-        color: white;
       }
 
       @include breakpoint( qhd ){
