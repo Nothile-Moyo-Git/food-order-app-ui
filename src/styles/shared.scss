@@ -13,15 +13,21 @@ $brand_color_eleven: #09c6f9;
 $brand_color_twelve: #045de9;
 $brand_color_thirteen:  #03a0cd;
 
+// Gradients
+$gradient_one: linear-gradient( $brand_color_one, $brand_color_two );
+$gradient_two: linear-gradient( $brand_color_two, $brand_color_seven );
+
 // Box shadows
-$box_shadow_one : 0px, 6px, 12px, rgba(0,0,0,0.2);
+$box_shadow_one : 0px 6px 12px rgba(0,0,0,0.2);
+$box_shadow_two : 0px 2px 6px $brand_color_seven;
 
 // Typography
 $brand_font_color_one: #FFFFFF;
 
 // Padding
+$padding-x-5: 0% 5% 0% 5%;
 $padding_x_10: 0% 10% 0% 10%;
-$padding_horizontal_mobile: 0rem 0.5rem 0rem 0.5rem;
+$padding_horizontal_mobile: 0rem 1rem 0rem 1rem;
 $page_container: 0% 5% 0% 5%;
 
 // Images
@@ -48,5 +54,6 @@ $transition_quarter_second : all 0.25s linear;
     @else if $point == uhd{
         @media ( min-width: 3840px ){ @content; }
     }
+    
 }
 

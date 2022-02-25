@@ -6,48 +6,42 @@
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    width: 80%;
+    width: 80vw;
     z-index: 3;
     margin: auto;
-    padding: $padding_x_10;
-    background-color: $brand_color_two;
-    box-shadow: $box_shadow_one;
+    padding: $padding-x-10;
+    background-image: $gradient_two;
+    box-shadow: $box_shadow_two;
     height: 5rem;
     top: 0px;
     left: 0;
     
     & h2{
+
       color: white;
       max-width: 50%;
+      font-size: 1.25rem;
+
+      @include breakpoint( tablet ){
+        font-size: 2rem;
+      }
+
+      @include breakpoint( qhd ){
+        font-size: 3rem;
+      }
+      
     }
 
   }
 
   .main-image{
-    width: 100%;
-    overflow-x: hidden;
-    height: 20rem;
-
-    @include breakpoint(tablet){
-      height: 25rem;
-    }
-
-    @include breakpoint(qhd){
-      height: 35rem;
-    }
-
-    @include breakpoint(uhd){
-      height: 45rem;
-    }
+    width: 100vw;
+    overflow: hidden;
 
     & img{
       height: 15rem;
-      width: $image_size_rotate;
+      width: 100%;
       object-fit: cover;
-      position: relative;
-      bottom: 1rem;
-      right: 2rem;
-      transform: rotate(-3deg);
 
       @include breakpoint(tablet){
         height: 20rem;
