@@ -1,12 +1,14 @@
 import React from 'react';
 import './HeaderCartButton.scss';
-import CartIcon from './CartIcon';
+import CartIcon from '../Cart/CartIcon';
 
 const HeaderCartButton = (props) => {
-    return(<div className="header-cart">
+    return(
+    <button className="header-cart">
         <CartIcon width="24" height="24"></CartIcon>
-        <h3> Your Cart </h3>
-    </div>);
+        <p> Your Cart </p>
+        <div className="order-count" > 0 </div>
+    </button>);
 }
 
 export default HeaderCartButton;

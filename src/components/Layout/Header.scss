@@ -21,6 +21,7 @@
       color: white;
       max-width: 50%;
       font-size: 1.25rem;
+      font-weight: normal;
 
       @include breakpoint( tablet ){
         font-size: 2rem;
@@ -37,24 +38,26 @@
   .main-image{
     width: 100vw;
     overflow: hidden;
+    box-shadow: $box_shadow_one;
+    height: 15rem;
+
+    @include breakpoint(tablet){
+      height: 20rem;
+    }
+
+    @include breakpoint(qhd){
+      height: 30rem;
+      bottom: 3rem;
+    }
+
+    @include breakpoint(uhd){
+      height: 40rem;
+    }
 
     & img{
-      height: 15rem;
+      height: inherit;
       width: 100%;
       object-fit: cover;
-
-      @include breakpoint(tablet){
-        height: 20rem;
-      }
-
-      @include breakpoint(qhd){
-        height: 30rem;
-        bottom: 3rem;
-      }
-  
-      @include breakpoint(uhd){
-        height: 40rem;
-      }
       
     }
 

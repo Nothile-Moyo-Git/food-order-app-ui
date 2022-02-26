@@ -9,7 +9,7 @@ const Header = (props) => {
 
             <header className="header">
                 <h2> Moyo's Munch </h2>
-                <HeaderCartButton></HeaderCartButton>
+                <HeaderCartButton/>
             </header>
             
             <div className="main-image">

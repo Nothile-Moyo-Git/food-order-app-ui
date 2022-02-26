@@ -4,19 +4,33 @@ div{
     color: white;
 }
 
+.order-count{
+    background-color: $brand_color_two;
+    border: $border_one;
+    padding: 0.25rem 0.5rem;
+    border-radius: 25px;
+    margin-left: 1rem;
+    font-weight: bold;
+}
+
 .header-cart{
 
     display: flex;
     align-items: center;
     background-color: $brand_color_two;
-    border: 2px solid white;
+    border: $border_one;
     border-radius: 2rem;
-    padding: 0.25rem 1rem;
+    padding: 0.5rem 1rem;
     transition: $transition_quarter_second;
     transform: scale(1);
+    color: white;
     
     & svg{
         margin-right: 0.5rem;
+    }
+
+    & p{
+        font-size: 1rem;
     }
 
     & h3{

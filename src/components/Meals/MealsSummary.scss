@@ -1,0 +1,22 @@
+@import '../../styles/shared.scss';
+
+.meals-summary{
+    color: white;
+    border-radius: 1rem;
+    background: $gradient_two;
+    position: relative;
+    width: 90%;
+    max-width: 45rem;
+    margin: auto;
+    box-shadow: $box_shadow_two;
+    padding: 0.5rem 0.5rem;
+
+    & p{
+        padding: 0.5rem 0rem;
+        font-size: 1.25rem;
+    }
+
+    & h2{
+        font-size: 1.75rem;
+    }
+}
