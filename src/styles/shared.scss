@@ -20,9 +20,9 @@ $gradient_two: linear-gradient( $brand_color_two, $brand_color_seven );
 $gradient_three: linear-gradient( $brand_color_four, $brand_color_five );
 
 // Box shadows
-$box_shadow_one : 0px 6px 12px rgba(0,0,0,0.2);
-$box_shadow_two : 0px 3px 8px $brand_color_seven;
-$box_shadow_three : 0px 3px 8px $brand_color_five;
+$box_shadow_one : 0px 6px 16px rgba(0,0,0,0.2);
+$box_shadow_two : 0px 0px 20px $brand_color_seven;
+$box_shadow_three : 0px 0px 20px $brand_color_five;
 
 // Typography
 $brand_font_color_one: #FFFFFF;
