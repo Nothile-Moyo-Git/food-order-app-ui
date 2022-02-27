@@ -1,0 +1,26 @@
+@import '../../styles/shared.scss';
+
+.available-meals{
+    width: 92%;
+    max-width: 60rem;
+    border-radius: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    background: $gradient_three;
+    position: relative;
+    box-shadow: $box_shadow_three;
+
+    & ul{
+        list-style:none;
+
+        & li{
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            justify-content: space-between;
+        }
+    }
+
+
+}

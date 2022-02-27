@@ -17,19 +17,26 @@ $brand_color_fourteen: #383838;
 // Gradients
 $gradient_one: linear-gradient( $brand_color_one, $brand_color_two );
 $gradient_two: linear-gradient( $brand_color_two, $brand_color_seven );
+$gradient_three: linear-gradient( $brand_color_four, $brand_color_five );
 
 // Box shadows
 $box_shadow_one : 0px 6px 12px rgba(0,0,0,0.2);
-$box_shadow_two : 0px 2px 6px $brand_color_seven;
+$box_shadow_two : 0px 3px 8px $brand_color_seven;
+$box_shadow_three : 0px 3px 8px $brand_color_five;
 
 // Typography
 $brand_font_color_one: #FFFFFF;
+.text-align-left{ text-align: left; }
+.text-align-right{ text-align: right; }
 
 // Padding
 $padding-x-5: 0% 5% 0% 5%;
 $padding_x_10: 0% 10% 0% 10%;
+$padding_y_1_rem: 1rem 0rem;
+$padding_y_point5_rem: 0.5rem 0rem;
 $padding_horizontal_mobile: 0rem 1rem 0rem 1rem;
 $page_container: 0% 5% 0% 5%;
+
 
 // Borders
 $border_one : 2px solid white;
