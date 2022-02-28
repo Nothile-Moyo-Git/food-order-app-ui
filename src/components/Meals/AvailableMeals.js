@@ -1,38 +1,63 @@
-import React, { useContext } from "react";
+import React from "react";
 import './AvailableMeals.scss';
-import MealsContext from './DummyMeals.js';
+
+const DUMMY_DATA = [
+{
+    id: 'm1',
+    name: 'Sushi',
+    description: 'Finest fish and veggies',
+    price: 22.99,
+  },
+  {
+    id: 'm2',
+    name: 'Schnitzel',
+    description: 'A german specialty!',
+    price: 16.5,
+  },
+  {
+    id: 'm3',
+    name: 'Barbecue Burger',
+    description: 'American, raw, meaty',
+    price: 12.99,
+  },
+  {
+    id: 'm4',
+    name: 'Green Bowl',
+    description: 'Healthy...and green...',
+    price: 18.99,
+  },
+];
 
 const AvailableMeals = (props) => {
 
-    const context = useContext(MealsContext);
-    console.log(context);
+const mealsList = [];
 
-    const mealList = [];
-
-    context.meals.forEach((meal,index) => {
-        mealList.push(
+DUMMY_DATA.map((meal) => {
+    return(
+        mealsList.push(
         <li key={ meal.id }>
-            <div className="text-align-left">
-                {meal.name}
-                <br/>
+
+            <div className="text-align-left meal-item">
+                <p className="dish-title"> {meal.name} </p>
                 {meal.description}
                 <br/>
-                {meal.price}
+                £{meal.price}
             </div>
 
-            <div>
-                Add to cart button
+            <div className="add-to-cart">
+                Add To Cart
             </div>
 
-        </li>); 
-    }); 
+        </li>)
+    ); 
+}); 
 
     return(
-        <div className="available-meals">
+        <section className="available-meals">
             <ul>
-                {mealList}
+                {mealsList}
             </ul>
-        </div>
+        </section>
     );
 } 
 

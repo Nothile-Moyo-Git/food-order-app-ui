@@ -9,12 +9,7 @@ body {
   font-family: 'Brush Script MT', Helvetica, Arial, sans-serif;
 }
 
-p{
+p, ul, li, section{
   margin: 0;
   padding: 0;
-}
-
-ul{
-  padding: 0;
-  margin: 0;
 }

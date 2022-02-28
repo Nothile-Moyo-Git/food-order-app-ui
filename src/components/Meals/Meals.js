@@ -5,9 +5,10 @@ import MealsSummary from './MealsSummary';
 
 const Meals = (props) => {
 return(<div className="meals">
-        <MealsSummary/>
-        <AvailableMeals/>
-       </div>);
+            <MealsSummary/>
+            <AvailableMeals/>
+       </div>
+       );
 }
 
 export default Meals;

@@ -1,6 +1,6 @@
 @import '../../styles/shared.scss';
 
-.meals-summary{
+.summary{
     color: white;
     border-radius: 1rem;
     background: $gradient_two;
@@ -11,14 +11,23 @@
     margin-right: auto;
     margin-bottom: 3rem;
     box-shadow: $box_shadow_two;
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem 1.5rem;
+    box-sizing: border-box;
 
     & p{
         padding: 0.5rem 0rem;
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
 
     & h2{
-        font-size: 1.75rem;
+        font-size: 1.25rem;
+    }
+
+    @include breakpoint(tablet){
+
+    }
+
+    @include breakpoint(qhd){
+
     }
 }

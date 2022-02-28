@@ -1,7 +1,7 @@
 @import '../../styles/shared.scss';
 
 .available-meals{
-    width: 92%;
+    width: 90%;
     max-width: 60rem;
     border-radius: 1rem;
     margin-left: auto;
@@ -10,6 +10,8 @@
     background: $gradient_three;
     position: relative;
     box-shadow: $box_shadow_three;
+    box-sizing: border-box;
+    padding: 0.5rem 0.5rem;
 
     & ul{
         list-style:none;
@@ -22,5 +24,14 @@
         }
     }
 
+    p.dish-title{
+        padding: 0;
+        margin: 0;
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
 
+    .meal-item{
+        max-width: 50%;
+    }
 }

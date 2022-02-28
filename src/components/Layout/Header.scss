@@ -6,10 +6,10 @@
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    width: 80vw;
+    width: 90vw;
     z-index: 3;
     margin: auto;
-    padding: $padding-x-10;
+    padding: $padding-x-5;
     background-image: $gradient_two;
     box-shadow: $box_shadow_two;
     height: 5rem; 
@@ -24,6 +24,7 @@
       font-weight: normal;
 
       @include breakpoint( tablet ){
+        width: 80vw;
         font-size: 2rem;
       }
 

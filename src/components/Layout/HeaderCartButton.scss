@@ -5,11 +5,11 @@ div{
 }
 
 .order-count{
-    background-color: $brand_color_two;
+    background: $gradient_three;
     border: $border_one;
     padding: 0.25rem 0.5rem;
     border-radius: 25px;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     font-weight: bold;
 }
 
@@ -17,7 +17,8 @@ div{
 
     display: flex;
     align-items: center;
-    background-color: $brand_color_seven;
+    background: $gradient_three;
+    box-shadow: $box_shadow_three;
     border: $border_one;
     border-radius: 2rem;
     padding: 0.5rem 1rem;
