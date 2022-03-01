@@ -38,28 +38,6 @@ const mealsList = DUMMY_DATA.map((meal) => {
     )
 });
 
-/* const mealsList = [];
-
-DUMMY_DATA.map((meal) => {
-    return(
-        mealsList.push(
-        <li key={ meal.id }>
-
-            <div className="text-align-left meal-item">
-                <p className="dish-title"> {meal.name} </p>
-                {meal.description}
-                <br/>
-                £{meal.price}
-            </div>
-
-            <div className="add-to-cart">
-                Add To Cart
-            </div>
-
-        </li>)
-    ); 
-}); */
-
     return(
         <PinkCard>
             <ul>
