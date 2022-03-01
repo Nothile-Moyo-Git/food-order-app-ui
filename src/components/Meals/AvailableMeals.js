@@ -1,7 +1,7 @@
 import React from "react";
 import PinkCard from "../UI/PinkCard";
 import './AvailableMeals.scss';
-import MealItem from "./MealItem/MealItem.jsx"
+import MealItem from "./MealItem/MealItem"
 
 const DUMMY_DATA = [
 {
