@@ -1,0 +1,26 @@
+@import '../../../styles/shared.scss';
+
+.meal{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    justify-content: space-between;
+
+
+    & .title{
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    & .meal-item{
+        max-width: 50%;
+    }
+
+    & .description{
+
+    }
+
+    & .price{
+
+    }
+}

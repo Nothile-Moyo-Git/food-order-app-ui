@@ -1,0 +1,15 @@
+@import '../../styles/shared.scss';
+
+.pink-card{
+    width: 90%;
+    max-width: 60rem;
+    border-radius: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    background: $gradient_three;
+    position: relative;
+    box-shadow: $box_shadow_three;
+    box-sizing: border-box;
+    padding: 0.5rem 0.5rem;
+}

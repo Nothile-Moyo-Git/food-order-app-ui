@@ -1,29 +1,18 @@
 @import '../../styles/shared.scss';
 
-.available-meals{
-    width: 90%;
-    max-width: 60rem;
-    border-radius: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 3rem;
-    background: $gradient_three;
-    position: relative;
-    box-shadow: $box_shadow_three;
-    box-sizing: border-box;
-    padding: 0.5rem 0.5rem;
 
-    & ul{
-        list-style:none;
+ul{
+    list-style:none;
 
-        & li{
-            display: flex;
-            align-items: center;
-            padding: 0.5rem 1rem;
-            justify-content: space-between;
-        }
+    & li{
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        justify-content: space-between;
     }
+}
 
+.meal-item{ 
     p.dish-title{
         padding: 0;
         margin: 0;

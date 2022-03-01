@@ -1,5 +1,7 @@
 import React from "react";
+import PinkCard from "../UI/PinkCard";
 import './AvailableMeals.scss';
+import MealItem from "./MealItem/MealItem.jsx"
 
 const DUMMY_DATA = [
 {
@@ -30,7 +32,13 @@ const DUMMY_DATA = [
 
 const AvailableMeals = (props) => {
 
-const mealsList = [];
+const mealsList = DUMMY_DATA.map((meal) => {
+    return(
+        <MealItem key={meal.id} id={meal.id} name={meal.name} description={meal.description} price={meal.price}></MealItem>
+    )
+});
+
+/* const mealsList = [];
 
 DUMMY_DATA.map((meal) => {
     return(
@@ -50,14 +58,14 @@ DUMMY_DATA.map((meal) => {
 
         </li>)
     ); 
-}); 
+}); */
 
     return(
-        <section className="available-meals">
+        <PinkCard>
             <ul>
                 {mealsList}
             </ul>
-        </section>
+        </PinkCard>
     );
 } 
 
