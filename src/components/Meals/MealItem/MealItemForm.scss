@@ -1,1 +1,24 @@
 @import '../../../styles/shared.scss';
+
+form{
+    display: flex;
+    align-items: center;
+    background: $gradient_two;
+    border-radius: 1rem;
+    box-shadow: $box_shadow_one;
+
+    button{
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        border-top: $border_one;
+        border-right: $border_one;
+        border-bottom: $border_one;
+        background: inherit;
+        transition: $transition_quarter_second;
+        padding: $padding_add_items_button;
+        border-left: none;
+        color: white;
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+}

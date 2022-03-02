@@ -13,14 +13,19 @@
     }
 
     & .meal-item{
-        max-width: 50%;
+        max-width: 48%;
+    }
+
+    & .add-to-cart{
+        max-width: 48%;
     }
 
     & .description{
-
+        font-style: italic;
     }
 
     & .price{
-
+        font-weight: bold;
+        font-size: 1.1rem;
     }
 }
