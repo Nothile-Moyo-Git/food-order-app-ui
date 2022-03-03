@@ -2,7 +2,22 @@
 
 .input{
 
+    flex-basis: 50%;
+
     input{
+        width: 94%;
+        text-align: center;
+        background: inherit;
+        color: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        border-style: solid;
+        border-color: white;
+        padding: $padding_y_quarter5_rem;
+        box-shadow: $box_shadow_one;
+    }
+
+    /* input{
         border-right: none;
         border-top: $border_one;
         border-bottom: $border_one;
@@ -15,6 +30,6 @@
         text-align: center;
         font-weight: bold;
         font-size: 1.25rem;
-    }
+    } */
 
 }

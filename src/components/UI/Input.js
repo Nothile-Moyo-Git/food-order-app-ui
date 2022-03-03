@@ -9,6 +9,7 @@ const Input = (props) => {
             <input {...props.input}/>
         </div>
     );
+    
 }
 
 export default Input;

@@ -3,11 +3,13 @@
 form{
     display: flex;
     align-items: center;
-    background: $gradient_two;
-    border-radius: 1rem;
-    box-shadow: $box_shadow_one;
+    flex-wrap: wrap;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
 
-    button{
+/*    button{
         border-top-right-radius: 1rem;
         border-bottom-right-radius: 1rem;
         border-top: $border_one;
@@ -20,5 +22,86 @@ form{
         color: white;
         font-weight: bold;
         font-size: 1.25rem;
+    } */
+
+    & .decrement{
+        flex-basis: 25%;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        background: inherit;
+        color: inherit;
+        font-size: inherit;
+        border-style: solid;
+        font-weight: inherit;
+        border-right: 0;
+        border-color: white;
+        padding: $padding_y_quarter5_rem;
+        transition: $transition_quarter_second;
+
+        &:hover{
+            background: white;
+            color: $brand_color_four;
+        }
+
+        box-shadow: $box_shadow_one;
+
     }
+
+    & .increment{
+        flex-basis: 25%;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        color: inherit;
+        font-size: inherit;
+        background: inherit;
+        font-weight: inherit;
+        border-style: solid;
+        border-left: 0;
+        border-color: white;
+        padding: $padding_y_quarter5_rem;
+        transition: $transition_quarter_second;
+
+        &:hover{
+            background: white;
+            color: $brand_color_four;
+        }
+
+        box-shadow: $box_shadow_one;
+    }
+
+    & .submit{
+        width: 100%;
+        display: block;
+        flex-basis: 100%;
+        border-radius: 1rem;
+        font-size: inherit;
+        background: inherit;
+        font-weight: inherit;
+        margin-top: 0.5rem;
+        color: inherit;
+        border-style: solid;
+        border-color: white;
+        box-shadow: $box_shadow_one;
+        transition: $transition_quarter_second;
+        padding: $padding_y_point5_rem;
+
+        &:hover{
+            background: white;
+            color: $brand_color_four;
+        }
+    }
+
+
+}
+
+/* Remove input number icons */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+        margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+-moz-appearance: textfield;
 }
