@@ -1,6 +1,7 @@
 import './styles/App.scss';
 import Header from './components/Layout/Header';
 import Meals from './components/Meals/Meals';
+import Modal from './components/UI/Modal';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <main>
           <Meals/>
         </main>
+        { /* <Modal/> */ }
     </div>
   );
 }

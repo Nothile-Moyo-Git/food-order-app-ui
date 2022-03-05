@@ -9,21 +9,6 @@ form{
     font-size: 1rem;
     font-weight: bold;
 
-/*    button{
-        border-top-right-radius: 1rem;
-        border-bottom-right-radius: 1rem;
-        border-top: $border_one;
-        border-right: $border_one;
-        border-bottom: $border_one;
-        background: inherit;
-        transition: $transition_quarter_second;
-        padding: $padding_add_items_button;
-        border-left: none;
-        color: white;
-        font-weight: bold;
-        font-size: 1.25rem;
-    } */
-
     & .decrement{
         flex-basis: 25%;
         border-top-left-radius: 1rem;

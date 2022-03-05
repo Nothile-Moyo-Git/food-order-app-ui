@@ -15,7 +15,7 @@ $brand_color_thirteen:  #03a0cd;
 $brand_color_fourteen: #383838;
 
 // Gradients
-$gradient_one: linear-gradient( $brand_color_one, $brand_color_two );
+$gradient_one: linear-gradient( $brand_color_three, $brand_color_four );
 $gradient_two: linear-gradient( $brand_color_two, $brand_color_seven );
 $gradient_three: linear-gradient( $brand_color_four, $brand_color_five );
 
@@ -23,6 +23,7 @@ $gradient_three: linear-gradient( $brand_color_four, $brand_color_five );
 $box_shadow_one : 0px 6px 16px rgba(0,0,0,0.2);
 $box_shadow_two : 0px 0px 20px $brand_color_seven;
 $box_shadow_three : 0px 0px 20px $brand_color_five;
+$box_shadow_four : 0px 0px 20px $brand_color_three;
 
 // Typography
 $brand_font_color_one: #FFFFFF;
@@ -49,6 +50,9 @@ $image_size_rotate : 110%;
 
 // transitions
 $transition_quarter_second : all 0.25s linear;
+
+// Overlays
+$black_overlay : rgba(0, 0, 0, 0.8);
 
 // Breakpoints
 @mixin breakpoint($point) {
