@@ -24,7 +24,6 @@
       font-weight: normal;
 
       @include breakpoint( tablet ){
-        width: 80vw;
         font-size: 2rem;
       }
 
