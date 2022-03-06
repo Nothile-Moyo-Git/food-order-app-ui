@@ -28,6 +28,8 @@ form{
             color: $brand_color_four;
         }
 
+        &:active{ animation: pulse 2s; }
+
         box-shadow: $box_shadow_one;
 
     }
@@ -50,6 +52,8 @@ form{
             background: white;
             color: $brand_color_four;
         }
+
+        &:active{ animation: pulse 2s; }
 
         box-shadow: $box_shadow_one;
     }
@@ -74,6 +78,8 @@ form{
             background: white;
             color: $brand_color_four;
         }
+
+ 
     }
 
 

@@ -3,6 +3,8 @@ import './Cart.scss';
 
 const Cart = (props) => {
 
+    const hideModal = () => { props.showModal(false); }
+
     // Creating a dynamic list of all the items in our cart, we will reference this with context later
     const cartItems =   
     <ul className="cart-items"> 
@@ -19,7 +21,7 @@ const Cart = (props) => {
                 <span> £9.99 </span>
             </div>
             <div className="actions"> 
-                <button className="button--alt"> Close </button>
+                <button className="button--alt" onClick={ hideModal }> Close </button>
                 <button className="button"> Checkout </button>
             </div>
         </div>
