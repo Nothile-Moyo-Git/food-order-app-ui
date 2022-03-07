@@ -3,6 +3,7 @@ import Header from './components/Layout/Header';
 import Meals from './components/Meals/Meals';
 import Modal from './components/UI/Modal';
 import { useState } from "react";
+import CartProvider from './store/CartProvider';
 
 
 function App() {
@@ -12,13 +13,15 @@ function App() {
   const [showCartModal, setShowCartModal] = useState(false);
 
   return (
-    <div className="App">
-        <Header showModal={ setShowCartModal } />
-        <main>
-          <Meals/>
-        </main>
-        { showCartModal === true && <Modal showModal={ setShowCartModal } /> }
-    </div>
+    <CartProvider>
+      <div className="App">
+          <Header showModal={ setShowCartModal } />
+          <main>
+            <Meals/>
+          </main>
+          { showCartModal === true && <Modal showModal={ setShowCartModal } /> }
+      </div>
+    </CartProvider>
   );
 }
 
