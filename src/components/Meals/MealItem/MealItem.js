@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import CartContext from "../../../store/cart-context";
 import './MealItem.scss'
 import MealItemForm from "./MealItemForm";
 
 const MealItem = (props) => {
+
+    const globalCartContext = useContext(CartContext);
+
+    const price = `${props.price.toFixed(2)}`;
+
+    // On form submissionm add this jsx object to the context to be referenced by the cart
+    const addToCartHandler = (amount) => {
+        globalCartContext.addItem({id: props.id, name: props.name, amount: amount, price: price});
+    }
 
     return( 
         <li key={props.id} className="meal">
@@ -13,7 +23,7 @@ const MealItem = (props) => {
             </div>
 
             <div className="add-to-cart">
-                <MealItemForm id={props.id} label={props.label} type="number"></MealItemForm>
+                <MealItemForm id={props.id} label={props.label} type="number" onAddToCart={ addToCartHandler }></MealItemForm>
             </div>
         </li> 
     );

@@ -1,4 +1,5 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useContext, useRef, useState } from "react";
+import CartContext from "../../../store/cart-context";
 import Input from "../../UI/Input";
 import './MealItemForm.scss';
 
@@ -21,23 +22,42 @@ const reducer = (state, action) => {
 // Meal item functional component definition
 const MealItemForm = (props) => {
 
-    const handleSubmit = (event) => {
-        
+    const globalCartContext = useContext(CartContext);
+
+    const amountInputRef = useRef();
+
+    const submitHandler = (event) => {
+
+        // Don't reload the page on form submission
         event.preventDefault();
-        // Input is found in event.target[1].value;
+
+        // We're getting our number using a forward ref to the input component, this represents the number of items to add to cart
+        const enteredAmount = Number(amountInputRef.current.value);
+
+        if( enteredAmount < 1 || enteredAmount > 5 ){
+            setAmountIsValid(false);
+        }else{
+            setAmountIsValid(true);
+            props.onAddToCart(enteredAmount);
+        }
 
     }
+
+    const [amountIsValid, setAmountIsValid] = useState(true);
 
     // Create a reducer, we're using a jsx object called countState we're setting to value:1 
     const [countState, dispatcher] = useReducer(reducer, initialState);
 
     return(
-        <form onSubmit={ handleSubmit }>
+        <form onSubmit={ submitHandler }>
 
                 <button className="decrement" onClick={ () => dispatcher({ type:'decrement' }) } alt="Reduce Items"> - </button>
 
                 { /* For reference, padding a jsx object with parameters are passed through to the component level, setting these paremeters for us */ }
-                <Input label="Amount" input={{
+                <Input 
+                    label="Amount"
+                    ref={ amountInputRef } 
+                    input={{
                     id: `${props.id}-amount`,
                     type: "number",
                     min: 1,
@@ -50,6 +70,7 @@ const MealItemForm = (props) => {
                 <button className="increment" onClick={ () => dispatcher({type: 'increment' }) } alt="Increase Items"> + </button>
 
             <button className="submit" type="submit"> Add To Cart </button>
+            { !amountIsValid && <span> Please enter a valid amount (between 1 and 5) </span> }
         </form>
     );
 
