@@ -43,7 +43,7 @@ const Cart = (props) => {
 
     return(
         <div className={props.className}>
-            {   cartItems   }
+            {   /* cartItems */   }
             { 
                 globalCartContext.items.length > 0 ? cartItems : <h3 className="empty-text"> Cart Empty </h3> 
             }
