@@ -4,8 +4,10 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    overflow: auto;
-    margin-bottom: 1rem;
+    overflow-y: auto;
+    margin-bottom: 2rem;
+    max-height: calc(60vh - 4rem);
+    padding-right: 1rem;
 
     & p{
       width: 100%;
