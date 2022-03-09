@@ -9,8 +9,6 @@ const Cart = (props) => {
     // We're getting our global items here so we can reference out updated cart and output the information
     const globalCartContext = useContext(CartContext);
     
-    console.log( `Testing global cart context` );
-    console.log( globalCartContext );
 
     /* 
     // Creating a dynamic list of all the items in our cart, we will reference this with context later
@@ -45,7 +43,10 @@ const Cart = (props) => {
 
     return(
         <div className={props.className}>
-            {cartItems}
+            {   cartItems   }
+            { 
+                globalCartContext.items.length > 0 ? cartItems : <h3 className="empty-text"> Cart Empty </h3> 
+            }
             <div className="total">
                 { /*
                     <span> Total Amount </span>
