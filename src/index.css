@@ -18,8 +18,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li, section{
 /* width */
 ::-webkit-scrollbar {
   width: 8px;
-  padding-left: 0.25rem;
-  border: 2px solid #b91372;
+  border-radius: 4px;
 }
 
 /* Track */
