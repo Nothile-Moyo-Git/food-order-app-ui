@@ -51,7 +51,7 @@ const MealItemForm = (props) => {
     return(
         <form onSubmit={ submitHandler }>
 
-                <button className="decrement" onClick={ () => dispatcher({ type:'decrement' }) } alt="Reduce Items"> - </button>
+                <button type="button" className="decrement" onClick={ () => dispatcher({ type:'decrement' }) } alt="Reduce Items"> - </button>
 
                 { /* For reference, padding a jsx object with parameters are passed through to the component level, setting these paremeters for us */ }
                 <Input 
@@ -67,7 +67,7 @@ const MealItemForm = (props) => {
                     value: countState.value,
                 }} readOnly={true} />
 
-                <button className="increment" onClick={ () => dispatcher({type: 'increment' }) } alt="Increase Items"> + </button>
+                <button type="button" className="increment" onClick={ () => dispatcher({type: 'increment' }) } alt="Increase Items"> + </button>
 
             <button className="submit" type="submit"> Add To Cart </button>
             { !amountIsValid && <span> Please enter a valid amount (between 1 and 5) </span> }

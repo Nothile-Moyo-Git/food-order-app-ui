@@ -5,8 +5,13 @@ const cartReducer = (state, action) => {
 
     // We're using concat to create new pointers in order to avoid mutation side effects
     if( action.type === 'add' ){
+        // Take our previous state, and "push" our new item onto the stack using concat
         const updatedItems = state.items.concat(action.item);
+
+        // Calculate the total amount to be paid
         const updatedAmount = state.amount + action.item.price * action.item.amount;
+
+        // Return the updated context
         return { items: updatedItems, amount: updatedAmount };
     }
 
