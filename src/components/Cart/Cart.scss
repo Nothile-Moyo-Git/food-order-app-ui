@@ -4,8 +4,13 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    max-height: 20rem;
     overflow: auto;
+    margin-bottom: 1rem;
+
+    & p{
+      width: 100%;
+      text-align: left;
+    }
 
     & li{ 
       padding: 0; 
@@ -13,16 +18,19 @@
       font-size: 1.5rem; 
       font-weight: bold;
       font-style: italic;
+      flex-direction: column;
     }
   }
   
   .total {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
+    font-style: normal;
     font-size: 1.5rem;
-    margin: 1rem 0;
+    margin: 0rem 0rem 1rem 0rem;
   }
   
   .actions {
@@ -30,6 +38,7 @@
     position: fixed;
     bottom: 1rem;
     right: 1.1rem;
+    margin-top: 1rem;
 
     & button {
         font: inherit;
