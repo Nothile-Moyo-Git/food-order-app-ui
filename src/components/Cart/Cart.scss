@@ -5,9 +5,9 @@
     margin: 0;
     padding: 0;
     overflow-y: auto;
-    margin-bottom: 2rem;
-    max-height: calc(60vh - 4rem);
+    max-height: calc(60vh - 6.5rem);
     padding-right: 1rem;
+    margin-bottom: 0.5rem;
 
     & p{
       width: 100%;
@@ -33,6 +33,14 @@
     font-style: normal;
     font-size: 1.5rem;
     margin: 0rem 0rem 1rem 0rem;
+
+    &__amount{
+      margin: $margin_bottom_5rem;
+
+      & span{
+        padding-right: 1rem;
+      }
+    }
   }
   
   .actions {

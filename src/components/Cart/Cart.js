@@ -9,6 +9,7 @@ const Cart = (props) => {
     // We're getting our global items here so we can reference out updated cart and output the information
     const globalCartContext = useContext(CartContext);
     
+    const totalAmount = `£${globalCartContext.amount.toFixed(2)}`;
 
     /* 
     // Creating a dynamic list of all the items in our cart, we will reference this with context later
@@ -31,7 +32,7 @@ const Cart = (props) => {
                         <li>
                             <p> { `${item.name} (${item.amount})` } </p>
                             <div className="total">
-                                <span> Total Amount </span>
+                                <span> Price: </span>
                                 <span> { `£${total}` } </span>
                             </div>                            
                         </li>
@@ -47,11 +48,9 @@ const Cart = (props) => {
             { 
                 globalCartContext.items.length > 0 ? cartItems : <h3 className="empty-text"> Cart Empty </h3> 
             }
-            <div className="total">
-                { /*
-                    <span> Total Amount </span>
-                    <span> £9.99 </span>
-                */ }   
+            <div className="total total__amount">               
+                <span> Total Amount </span>
+                <span> { totalAmount } </span>               
             </div>
             <div className="actions"> 
                 <button className="button--alt" onClick={ hideModal }> Close </button>
