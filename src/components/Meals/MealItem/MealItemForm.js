@@ -1,4 +1,4 @@
-import React, { useReducer, useContext, useRef, useState } from "react";
+import React, { useReducer, useContext, useRef, useState, useEffect } from "react";
 import CartContext from "../../../store/cart-context";
 import Input from "../../UI/Input";
 import './MealItemForm.scss';
@@ -23,6 +23,8 @@ const reducer = (state, action) => {
 const MealItemForm = (props) => {
 
     const globalCartContext = useContext(CartContext);
+
+    useEffect(() => {},[globalCartContext]);
 
     const amountInputRef = useRef();
 
@@ -51,6 +53,7 @@ const MealItemForm = (props) => {
     return(
         <form onSubmit={ submitHandler }>
 
+            <div className="meal-modifier">
                 <button type="button" className="decrement" onClick={ () => dispatcher({ type:'decrement' }) } alt="Reduce Items"> - </button>
 
                 { /* For reference, padding a jsx object with parameters are passed through to the component level, setting these paremeters for us */ }
@@ -68,6 +71,7 @@ const MealItemForm = (props) => {
                 }} readOnly={true} />
 
                 <button type="button" className="increment" onClick={ () => dispatcher({type: 'increment' }) } alt="Increase Items"> + </button>
+            </div>
 
             <button className="submit" type="submit"> Add To Cart </button>
             { !amountIsValid && <span> Please enter a valid amount (between 1 and 5) </span> }

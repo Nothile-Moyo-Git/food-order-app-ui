@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import CartContext from "../../store/cart-context";
 import './Cart.scss';
+import CartItem from "./CartItem";
 
 const Cart = (props) => {
 
@@ -11,50 +12,45 @@ const Cart = (props) => {
     
     const totalAmount = `£${globalCartContext.amount.toFixed(2)}`;
 
-    /* 
+    const hasItems = globalCartContext.items.length > 0;
+
+    const cartItemRemoveHandler = (id) => {
+        globalCartContext.removeItem(id);
+    };
+
+    const cartAddItemHandler = (item) => {
+        globalCartContext.addItem(item);
+    };
+    
     // Creating a dynamic list of all the items in our cart, we will reference this with context later
     const cartItems =   
     <ul className="cart-items"> 
-        { [{id: 'm1', name: 'SFC', amount: 2, price: 2.99 }].map(
-            (item) => <li> {item.name} </li> 
-        )} 
-    </ul> */
-
-    const cartItems = 
-    <ul className="cart-items">
         {
-            globalCartContext.items.map(
-                (item) => { 
-
-                    let total = Number(item.price * item.amount).toFixed(2);
-
-                    return(
-                        <li>
-                            <p> { `${item.name} (${item.amount})` } </p>
-                            <div className="total">
-                                <span> Price: </span>
-                                <span> { `£${total}` } </span>
-                            </div>                            
-                        </li>
-                    ); 
-                }
-            )
+            globalCartContext.items.map( (item) => {
+                return(
+                    <CartItem 
+                        key={ item.id } 
+                        name={item.name} 
+                        amount={item.amount} 
+                        price={item.price} 
+                        onRemove={cartItemRemoveHandler.bind(null, item.id)} 
+                        onAdd={cartAddItemHandler.bind(null, item)} 
+                    />
+                );
+            })
         }
-    </ul>
+    </ul> 
 
     return(
         <div className={props.className}>
-            {   /* cartItems */   }
-            { 
-                globalCartContext.items.length > 0 ? cartItems : <h3 className="empty-text"> Cart Empty </h3> 
-            }
+            { cartItems }
             <div className="total total__amount">               
                 <span> Total Amount </span>
                 <span> { totalAmount } </span>               
             </div>
             <div className="actions"> 
                 <button className="button--alt" onClick={ hideModal }> Close </button>
-                <button className="button"> Checkout </button>
+                { hasItems && <button className="button"> Order </button> }
             </div>
         </div>
     );

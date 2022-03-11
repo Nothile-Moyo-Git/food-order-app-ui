@@ -2,19 +2,15 @@
 
 .input{
 
-    flex-basis: 50%;
-
     input{
-        width: 94%;
+        width: 30px;
         text-align: center;
         background: inherit;
         color: inherit;
         font-size: inherit;
         font-weight: inherit;
-        border-style: solid;
-        border-color: white;
-        padding: $padding_y_quarter5_rem;
-        box-shadow: $box_shadow_one;
+        border: 0;
+        padding: $padding_price_box;
     }
 
 }
