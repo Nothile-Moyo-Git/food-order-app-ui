@@ -30,7 +30,7 @@ form{
         transition: $transition_quarter_second;
         width: 2rem;
         height: 2rem;
-        border-radius: 0.75rem;
+        border-radius: 0.35rem;
 
         &:hover{
             background: white;
@@ -53,7 +53,7 @@ form{
         transition: $transition_quarter_second;
         width: 2rem;
         height: 2rem;
-        border-radius: 0.75rem;
+        border-radius: 0.35rem;
 
         &:hover{
             background: white;
@@ -67,7 +67,7 @@ form{
 
     & .submit{
         display: block;
-        border-radius: 1rem;
+        border-radius: 0.35rem;
         font-size: inherit;
         background: inherit;
         font-weight: inherit;

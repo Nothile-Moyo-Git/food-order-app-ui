@@ -1,19 +1,21 @@
+import './CartItem.scss';
+
 const CartItem = (props) => {
 
-  const price = `$${Number(props.price).toFixed(2)}`;
+  const price = `£${Number(props.price).toFixed(2)}`;
 
   return (
-    <li>
+    <li className="cart-item">
       <div>
-        <h2>{props.name}</h2>
+        <h3 className="item-name">{props.name}</h3>
         <div>
-          <span>{price}</span>
-          <span>x {props.amount}</span>
+          <span className="item-price">{price}</span>
+          <span className="item-amount">  x{props.amount}</span>
         </div>
       </div>
       <div>
-        <button onClick={ props.onRemove }>−</button>
-        <button onClick={ props.onAdd }>+</button>
+        <button className="add-item" onClick={ props.onRemove }>−</button>
+        <button className="remove-item" onClick={ props.onAdd }>+</button>
       </div>
     </li>
   );

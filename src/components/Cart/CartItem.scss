@@ -1,2 +1,20 @@
-@import '../../styles/shared.scss'
+@import '../../styles/shared.scss';
 
+.cart-item{
+
+    margin-bottom: 1rem;
+
+    & .item-name{
+        font-style: normal;
+    }
+
+    & .item-price{
+        color: $brand_color_one;
+    }
+
+    & .item-amount{
+        padding-left: 0.5rem;
+        font-weight: normal;
+        color: $brand_color_one;
+    }
+}
