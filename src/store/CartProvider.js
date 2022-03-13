@@ -1,16 +1,37 @@
 import React, { useReducer } from "react";
 import CartContext from "./cart-context";
 
+
 const cartReducer = (state, action) => {
 
     // We're using concat to create new pointers in order to avoid mutation side effects
     if( action.type === 'add' ){
-        // Take our previous state, and "push" our new item onto the stack using concat
-        const updatedItems = state.items.concat(action.item);
 
         // Calculate the total amount to be paid
         const updatedAmount = state.amount + action.item.price * action.item.amount;
 
+        // Check if an item already exists in our array
+        const existingCartItemIndex = state.items.findIndex(item => item.id === action.item.id);
+
+        // Reference it so we can add more items instead of rendering it repeatedly
+        const existingCartItem = state.items[existingCartItemIndex];
+
+        let updatedItem;
+        let updatedItems;
+
+        // If we already have the item, then add the new amount to the previous amount at that point in the array, or push it at the end
+        if (existingCartItem){
+            updatedItem = {
+                ...existingCartItem,
+                amount: existingCartItem.amount + action.item.amount
+            };
+            updatedItems = [...state.items];
+            updatedItems[existingCartItemIndex] = updatedItem;
+        }else{
+            updatedItem = state.item;
+            updatedItems = state.items.concat(action.item);
+        }
+ 
         // Return the updated context
         return { items: updatedItems, amount: updatedAmount };
     }

@@ -14,6 +14,7 @@ const Header = (props) => {
             
             <div className="main-image">
                 <img src={process.env.PUBLIC_URL + '/assets/food_2.jpg'} alt="The best munch in town!"/>
+                <div className="image-skew"> Skew </div>
             </div>
 
         </>

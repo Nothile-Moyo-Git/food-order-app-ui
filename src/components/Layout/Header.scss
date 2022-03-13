@@ -61,6 +61,12 @@
       
     }
 
+    & .image-skew{
+      height: 1rem;
+      transform: skewY(15deg);
+      width: 100%;
+    }
+
   }
   
 

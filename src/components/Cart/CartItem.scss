@@ -3,6 +3,7 @@
 .cart-item{
 
     margin-bottom: 1rem;
+    justify-content: space-between;
 
     & .item-name{
         font-style: normal;
@@ -16,5 +17,17 @@
         padding-left: 0.5rem;
         font-weight: normal;
         color: $brand_color_one;
+    }
+
+    div{
+        flex-basis: 48%;
+
+        & button{
+            float: right;
+
+            &.gap-left{
+                margin: $cart_modifier_button_margin;
+            }
+        }
     }
 }

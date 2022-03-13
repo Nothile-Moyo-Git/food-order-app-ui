@@ -42,9 +42,11 @@ $padding_horizontal_mobile: 0rem 1rem 0rem 1rem;
 $page_container: 0% 5% 0% 5%;
 $padding_add_items_number: 0.25rem 0rem 0.25rem 1rem;
 $padding_add_items_button: 0.25rem 1rem 0.25rem 0rem;
+$padding_default_button: 0rem 1rem 0rem 0.75rem;
 
 // Margins
 $margin_bottom_5rem: 0rem 0rem 5rem 0rem;
+$cart_modifier_button_margin: 0rem 0rem 0rem 0.75rem;
 
 // Borders
 $border_one : 2px solid white;
@@ -58,6 +60,31 @@ $transition_quarter_second : all 0.25s linear;
 
 // Overlays
 $black_overlay : rgba(0, 0, 0, 0.8);
+
+// Buttons
+button.increment, button.decrement{
+    background: inherit;
+    color: inherit;
+    font-size: 1rem;
+    border-style: solid;
+    font-weight: bold;
+    border-color: white;
+    transition: $transition_quarter_second;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.35rem;
+    text-align: -webkit-center;
+    text-align: center;
+
+    &:hover{
+        background: white;
+        color: $brand_color_four;
+    }
+
+    &:active{ animation: pulse 2s; }
+
+    box-shadow: $box_shadow_one;
+}
 
 // Animations
 $slide_down_300ms : slide-down 500ms ease-out forwards;
