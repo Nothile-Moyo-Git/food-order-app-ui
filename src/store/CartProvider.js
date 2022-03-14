@@ -58,7 +58,7 @@ const cartReducer = (state, action) => {
         }
 
         // Return our data with an item removed from the array
-        return { items: updatedItems, amount: updatedAmount  };
+        return { items: updatedItems, amount: Number(updatedAmount)  };
     }
 
     // Default return for our inital render
