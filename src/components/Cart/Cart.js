@@ -10,7 +10,7 @@ const Cart = (props) => {
     // We're getting our global items here so we can reference out updated cart and output the information
     const globalCartContext = useContext(CartContext);
     
-    const totalAmount = `£${globalCartContext.amount.toFixed(2)}`;
+    const totalAmount = `£${Number(globalCartContext.amount).toFixed(2)}`;
 
     const hasItems = globalCartContext.items.length > 0;
 
@@ -19,7 +19,7 @@ const Cart = (props) => {
     };
 
     const cartAddItemHandler = (item) => {
-        globalCartContext.addItem(item);
+        globalCartContext.addItem({...item, amount: 1});
     };
     
     // Creating a dynamic list of all the items in our cart, we will reference this with context later

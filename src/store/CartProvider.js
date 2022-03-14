@@ -4,7 +4,6 @@ import CartContext from "./cart-context";
 
 const cartReducer = (state, action) => {
 
-    // We're using concat to create new pointers in order to avoid mutation side effects
     if( action.type === 'add' ){
 
         // Calculate the total amount to be paid
@@ -38,9 +37,32 @@ const cartReducer = (state, action) => {
 
 
     if( action.type === 'remove'){
+        
+        // Check if an item already exists in our array
+        const existingCartItemIndex = state.items.findIndex(item => item.id === action.id);
 
+        const existingItem = state.items[existingCartItemIndex];
+        
+        // Get new amount with removed item
+        const updatedAmount  = (state.amount - Number(existingItem.price)).toFixed(2);
+
+        let updatedItems;
+
+        // If we have only item item left, then remove it, otherwise, remove one from the amount and calculator it 
+        if (existingItem.amount === 1 ){
+            updatedItems = state.items.filter((item) => { console.log(item); return(item.id !== action.id); } );
+        }else{
+            const updatedItem = {...existingItem, amount: existingItem.amount - 1};
+            updatedItems = [...state.items];
+            updatedItems[existingCartItemIndex] = updatedItem;
+        }
+
+        // Return our data with an item removed from the array
+        return { items: updatedItems, amount: updatedAmount  };
     }
-    return { items: [], amount: 0 };
+
+    // Default return for our inital render
+    return { items: [], amount: 0};
 
 };
 
