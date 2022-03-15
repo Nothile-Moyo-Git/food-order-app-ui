@@ -89,6 +89,18 @@ button.increment, button.decrement{
 }
 
 // Animations
+$slide_up: slide-up 750ms ease-out forwards;
+@keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(+3rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
 $slide_down_300ms : slide-down 500ms ease-out forwards;
 @keyframes slide-down {
     from {
