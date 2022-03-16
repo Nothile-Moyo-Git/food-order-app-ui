@@ -4,7 +4,7 @@
   text-align: center;
   width: 100vw;
   height: 100vh; 
-  overflow: hidden;
+  overflow-x: hidden;
 
   // Add the floating boxes in the background as our animation
   & .animation-box{
