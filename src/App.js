@@ -20,7 +20,19 @@ function App() {
             <Meals/>
           </main>
           { showCartModal === true && <Modal showModal={ setShowCartModal } /> }
+
+        <div className="animation-box"> 
+          <ul className="box-area">
+            <li> </li>
+            <li> </li>
+            <li> </li>
+            <li> </li>
+            <li> </li>
+            <li> </li>
+          </ul>
+        </div>
       </div>
+
     </CartProvider>
   );
 }

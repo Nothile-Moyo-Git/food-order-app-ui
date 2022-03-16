@@ -13,11 +13,16 @@ $brand_color_eleven: #09c6f9;
 $brand_color_twelve: #045de9;
 $brand_color_thirteen:  #03a0cd;
 $brand_color_fourteen: #383838;
+$brand_color_fifteen: #cfd6e6;
+$brand_color_sixteen: #e7eff9;
+$brand_color_seventeen: #7c98b3;
+$brand_color_eighteen: #637081;
 
 // Gradients
 $gradient_one: linear-gradient( $brand_color_three, $brand_color_four );
 $gradient_two: linear-gradient( $brand_color_two, $brand_color_seven );
 $gradient_three: linear-gradient( $brand_color_four, $brand_color_five );
+$gradient_four: linear-gradient( $brand_color_seven, $brand_color_thirteen );
 
 // Box shadows
 $box_shadow_one : 0px 6px 16px rgba(0,0,0,0.2);
@@ -89,7 +94,7 @@ button.increment, button.decrement{
 }
 
 // Animations
-$slide_up: slide-up 750ms ease-out forwards;
+$slide_up: slide-up 750ms linear forwards;
 @keyframes slide-up {
     from {
       opacity: 0;
@@ -101,7 +106,7 @@ $slide_up: slide-up 750ms ease-out forwards;
     }
   }
 
-$slide_down_300ms : slide-down 500ms ease-out forwards;
+$slide_down_300ms : slide-down 500ms linear forwards;
 @keyframes slide-down {
     from {
       opacity: 0;
@@ -127,6 +132,22 @@ $slide_down_300ms : slide-down 500ms ease-out forwards;
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }   
 } 
+
+@keyframes levitate{
+
+  0%{   
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50%{
+    transform: translateY(70vh) rotate(360deg);
+  }
+
+  100%{   
+    transform: translateY(0) rotate(0deg);
+  }
+
+}
 
 // Breakpoints
 @mixin breakpoint($point) {
