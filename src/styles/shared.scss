@@ -140,7 +140,7 @@ $slide_down_300ms : slide-down 500ms linear forwards;
   }
 
   50%{
-    transform: translateY(70vh) rotate(360deg);
+    transform: translateY(70vh) rotate(720deg) scale(1.5);
   }
 
   100%{   
