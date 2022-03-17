@@ -94,7 +94,7 @@ button.increment, button.decrement{
 }
 
 // Animations
-$slide_up: slide-up 750ms linear forwards;
+$slide_up: slide-up 750ms linear;
 @keyframes slide-up {
     from {
       opacity: 0;
@@ -106,7 +106,7 @@ $slide_up: slide-up 750ms linear forwards;
     }
   }
 
-$slide_down_300ms : slide-down 500ms linear forwards;
+$slide_down_300ms : slide-down 500ms linear;
 @keyframes slide-down {
     from {
       opacity: 0;
