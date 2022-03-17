@@ -8,7 +8,8 @@
     height: 100vh;
     z-index: 20;
     background-color: $black_overlay;
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(4px);
+    animation: $fade_in;
   }
   
   .modal {

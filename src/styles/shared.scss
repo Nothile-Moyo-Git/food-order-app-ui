@@ -140,12 +140,21 @@ $slide_down_300ms : slide-down 500ms linear forwards;
   }
 
   50%{
-    transform: translateY(80vh) rotate(720deg) scale(1.5);
+    transform: translateY(115vh) rotate(720deg) scale(1.5);
   }
 
   100%{   
     transform: translateY(0) rotate(0deg);
   }
+
+}
+
+// Fade in for certain modals
+$fade_in: fade-in 500ms linear;
+@keyframes fade-in{
+
+  0%{ opacity: 0; }
+  100%{ opacity: 1; }
 
 }
 
