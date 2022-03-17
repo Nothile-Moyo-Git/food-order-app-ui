@@ -149,6 +149,20 @@ $slide_down_300ms : slide-down 500ms linear;
 
 }
 
+@keyframes levitate_mobile_desktop_view{
+  0%{   
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50%{
+    transform: translateY(200vh) rotate(720deg) scale(1.5);
+  }
+
+  100%{   
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
 // Fade in for certain modals
 $fade_in: fade-in 500ms linear;
 @keyframes fade-in{
@@ -160,6 +174,10 @@ $fade_in: fade-in 500ms linear;
 
 // Breakpoints
 @mixin breakpoint($point) {
+
+    @if point == rotatedMobile{
+        @media ( max-height: 800px ) and ( max-width: 1500px ){ @content; }
+    }
 
     @if $point == tablet{
         @media ( min-width: 768px ){ @content; }

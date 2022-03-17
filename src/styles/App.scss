@@ -27,6 +27,13 @@
       }
 
       & li{
+        @include breakpoint(rotatedMobile){
+          animation: levitate_mobile_desktop_view 12s linear;
+          height: 300vh;
+        }
+      }
+
+      & li{
         position: absolute;
         top: 5%;
         display: block;
