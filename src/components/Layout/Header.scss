@@ -38,7 +38,7 @@
   .main-image{
     width: 100vw;
     overflow: hidden;
-    box-shadow: $box_shadow_one;
+    box-shadow: $box_shadow_two;
     height: 15rem;
 
     @include breakpoint(tablet){

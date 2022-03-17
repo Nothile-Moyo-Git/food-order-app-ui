@@ -26,9 +26,9 @@ $gradient_four: linear-gradient( $brand_color_seven, $brand_color_thirteen );
 
 // Box shadows
 $box_shadow_one : 0px 6px 16px rgba(0,0,0,0.2);
-$box_shadow_two : 0px 0px 20px $brand_color_seven;
-$box_shadow_three : 0px 0px 20px $brand_color_five;
-$box_shadow_four : 0px 0px 20px $brand_color_three;
+$box_shadow_two : 0px 0px 20px 2px $brand_color_seven;
+$box_shadow_three : 0px 0px 20px  2px $brand_color_five;
+$box_shadow_four : 0px 0px 20px 2px $brand_color_three;
 
 // Typography
 $brand_font_color_one: #FFFFFF;
