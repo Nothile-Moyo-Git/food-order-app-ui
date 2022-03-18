@@ -167,21 +167,21 @@ $slide_down_300ms : slide-down 500ms linear;
 $pink_background_animated: pink_background_animated 4s linear infinite;
 @keyframes pink_background_animated{
   0%{  box-shadow: $box_shadow_three; }
-  50%{  box-shadow: 0px 0px 20px 6px $brand_color_five; }
+  50%{  box-shadow: 0px 0px 20px 10px $brand_color_five; }
   100%{  box-shadow: $box_shadow_three; }
 }
 
 $blue_background_animated: blue_background_animated 4s linear infinite;
 @keyframes blue_background_animated{
   0%{ box-shadow: $box_shadow_two; }
-  50%{ box-shadow: 0px 0px 20px 6px $brand_color_seven; }
+  50%{ box-shadow: 0px 0px 20px 10px $brand_color_seven; }
   100%{ box-shadow: $box_shadow_two; }
 }
 
 $purple_background_animated: purple_background_animated 4s linear infinite;
 @keyframes purple_background_animated{
   0%{ box-shadow: $box_shadow_four; }
-  50%{ box-shadow: 0px 0px 20px 6px $brand_color_three; }
+  50%{ box-shadow: 0px 0px 20px 10px $brand_color_three; }
   100%{ box-shadow: $box_shadow_four; }
 }
 
