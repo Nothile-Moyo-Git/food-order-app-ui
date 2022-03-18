@@ -13,6 +13,8 @@
     box-shadow: $box_shadow_two;
     padding: 1.5rem 1.5rem;
     box-sizing: border-box;
+    animation: $blue_background_animated;
+    animation-delay: 2s;
 
     & p{
         padding: 0.5rem 0rem;

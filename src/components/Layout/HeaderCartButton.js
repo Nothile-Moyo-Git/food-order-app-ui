@@ -30,7 +30,7 @@ const HeaderCartButton = (props) => {
         // Remove the pulse animation by changing state after the animation ends
         const timer = setTimeout( () => {
             setAnimateButton(false);
-        }, 1001);
+        }, 500);
 
         // Clean up our timer in case a new one is set
         return () => clearTimeout(timer);

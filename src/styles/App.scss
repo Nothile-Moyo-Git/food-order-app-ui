@@ -21,11 +21,6 @@
       overflow: hidden;
       background: white;
 
-      @include breakpoint(desktop){
-        height: 100vh;
-        overflow: hidden;
-      }
-
       & li{
         @include breakpoint(rotatedMobile){
           animation: levitate_mobile_desktop_view 12s linear;

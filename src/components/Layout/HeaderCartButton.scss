@@ -25,6 +25,7 @@ div{
     transition: $transition_quarter_second;
     transform: scale(1);
     color: white;
+    animation: $pink_background_animated;
     
     & svg{
         margin-right: 0.5rem;
@@ -51,7 +52,7 @@ div{
 
     &.pulse{ 
         transform: scale(1.1);
-        animation: pulse 1s;
+        animation: pulse 0.5s linear;
     }
 
 }
