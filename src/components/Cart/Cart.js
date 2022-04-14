@@ -49,7 +49,7 @@ const Cart = (props) => {
             console.log('Setting our button');
             console.log(previousState);
 
-            if((previousState === false) || ()){  
+            if((previousState === false)){  
                 console.log('previous state is false');              
                 return !previousState;
             }
