@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import CartContext from "../../store/cart-context";
 import './Cart.scss';
 import CartItem from "./CartItem";
 
 const Cart = (props) => {
+
+    const [clickedOrderButton, setClickedOrderButton] = useState(false);
 
     const hideModal = () => { props.showModal(false); }
 
@@ -41,6 +43,24 @@ const Cart = (props) => {
         }
     </ul> 
 
+    const orderButtonHandler = () => {
+        setClickedOrderButton((previousState) => {
+
+            console.log('Setting our button');
+            console.log(previousState);
+
+            if((previousState === false) || ()){  
+                console.log('previous state is false');              
+                return !previousState;
+            }
+
+
+        })
+
+
+
+    }
+
     return(
         <div className={props.className}>
             { cartItems }
@@ -50,7 +70,7 @@ const Cart = (props) => {
             </div>
             <div className="actions"> 
                 <button className="button--alt" onClick={ hideModal }> Close </button>
-                { hasItems && <button className="button"> Order </button> }
+                { hasItems && <button className={ `button ${clickedOrderButton ? 'click-order-button' : '' }`  } onClick={ orderButtonHandler }> Order </button> }
             </div>
         </div>
     );
