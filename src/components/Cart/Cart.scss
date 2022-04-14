@@ -85,4 +85,10 @@
 .empty-text{
   margin-bottom: 2rem;
 }
+
+.click-order-button{
+  animation: $click_order_button;
+  color: $brand_color_five;
+  border-color: $brand_color_five;
+}
   

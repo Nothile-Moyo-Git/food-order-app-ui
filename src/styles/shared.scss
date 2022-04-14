@@ -107,7 +107,7 @@ $slide_up: slide-up 750ms linear;
     }
   }
 
-$slide_down_300ms : slide-down 500ms linear;
+$slide_down : slide-down 500ms linear;
 @keyframes slide-down {
     from {
       opacity: 0;
@@ -118,6 +118,37 @@ $slide_down_300ms : slide-down 500ms linear;
       transform: translateY(0);
     }
   }
+
+$click_order_button : submit-order 300ms linear;
+@keyframes submit-order{
+  0%{
+    transform: translateX(0);
+  }
+  12%{
+    transform: translateX(0.5rem);
+  }
+  25%{
+    transform: translateX(0rem);
+  }
+  37%{
+    transform: translateX(-0.5rem);
+  }
+  50%{
+    transform: translateX(0);
+  }
+  63%{
+    transform: translateX(0.5rem);
+  }
+  75%{
+    transform: translateX(0rem);
+  }
+  87%{
+    transform: translateX(-0.5rem);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
 
 @keyframes pulse {
     0% {
