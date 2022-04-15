@@ -47,6 +47,7 @@
     bottom: 1rem;
     right: 1.1rem;
     margin-top: 1rem;
+    height: 4rem;
 
     & button {
         font: inherit;
@@ -90,5 +91,32 @@
   animation: $click_order_button;
   color: $brand_color_five;
   border-color: $brand_color_five;
+}
+
+.order-reject{
+  overflow: visible;
+
+  &__bar{
+  background-color: $brand_color_nineteen;
+  width: 70px;
+  height: 1rem;
+  border-radius: 10px;
+  color: white;
+  display: inline-block;
+  position:relative;
+  bottom: 1.5rem;
+  animation: $phase_in_out;
+
+    &--one{
+      transform: rotate(45deg);
+      left: 4rem;
+    }
+
+    &--two{
+      transform: rotate(135deg);
+      right: 0.5rem;
+    }
+  }
+
 }
   

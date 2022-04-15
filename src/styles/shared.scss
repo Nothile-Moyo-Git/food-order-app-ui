@@ -17,6 +17,8 @@ $brand_color_fifteen: #cfd6e6;
 $brand_color_sixteen: #e7eff9;
 $brand_color_seventeen: #7c98b3;
 $brand_color_eighteen: #637081;
+$brand_color_nineteen: #a71d31;
+$brand_color_twenty: #3f0d12;
 
 // Gradients
 $gradient_one: linear-gradient( $brand_color_three, $brand_color_four );
@@ -119,31 +121,39 @@ $slide_down : slide-down 500ms linear;
     }
   }
 
+$phase_in_out : phase-in-out 300ms linear;
+@keyframes phase-in-out{
+  0%{ opacity: 0; }
+  50%{ opacity: 1; }
+  100%{ opacity: 0; }
+}
+
 $click_order_button : submit-order 300ms linear;
 @keyframes submit-order{
   0%{
     transform: translateX(0);
+
   }
   12%{
-    transform: translateX(0.5rem);
+    transform: translateX(0.33rem);
   }
   25%{
     transform: translateX(0rem);
   }
   37%{
-    transform: translateX(-0.5rem);
+    transform: translateX(-0.33rem);
   }
   50%{
     transform: translateX(0);
   }
   63%{
-    transform: translateX(0.5rem);
+    transform: translateX(0.33rem);
   }
   75%{
     transform: translateX(0rem);
   }
   87%{
-    transform: translateX(-0.5rem);
+    transform: translateX(-0.33rem);
   }
   100%{
     transform: translateX(0);

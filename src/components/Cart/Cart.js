@@ -44,20 +44,12 @@ const Cart = (props) => {
     </ul> 
 
     const orderButtonHandler = () => {
-        setClickedOrderButton((previousState) => {
+ 
+        // Add the class to our element in order to animate it
+        setClickedOrderButton(true);
 
-            console.log('Setting our button');
-            console.log(previousState);
-
-            if((previousState === false)){  
-                console.log('previous state is false');              
-                return !previousState;
-            }
-
-
-        })
-
-
+        // Remove the animation class 1ms after the animation ends in order to allow it to be clickable again
+        setTimeout(() => { setClickedOrderButton(false); }, 301);
 
     }
 
@@ -71,6 +63,12 @@ const Cart = (props) => {
             <div className="actions"> 
                 <button className="button--alt" onClick={ hideModal }> Close </button>
                 { hasItems && <button className={ `button ${clickedOrderButton ? 'click-order-button' : '' }`  } onClick={ orderButtonHandler }> Order </button> }
+                {   clickedOrderButton &&
+                    <div className="order-reject">
+                        <span className="order-reject__bar order-reject__bar--one"></span>
+                        <span className="order-reject__bar order-reject__bar--two"></span>
+                    </div> 
+                }
             </div>
         </div>
     );
