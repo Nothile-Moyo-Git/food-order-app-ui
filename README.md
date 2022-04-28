@@ -16,3 +16,5 @@ You can view the production build here: https://nothile-moyo-git.github.io/food-
 You can view the main branch for the code here: https://github.com/Nothile-Moyo-Git/food-order-app-ui 
 
 Here is a screenshot of the project: 
+
+![image](https://user-images.githubusercontent.com/15236959/165844349-5cd6e66e-f305-4eef-9c86-4181cc489cfc.png)
