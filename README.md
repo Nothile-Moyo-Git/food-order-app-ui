@@ -17,4 +17,4 @@ You can view the main branch for the code here: https://github.com/Nothile-Moyo-
 
 Here is a screenshot of the project: 
 
-![image](https://user-images.githubusercontent.com/15236959/165844349-5cd6e66e-f305-4eef-9c86-4181cc489cfc.png)
+![image](https://user-images.githubusercontent.com/15236959/165844465-33da7ee2-c66d-4e55-8ec0-ba3b43bfe991.png)
