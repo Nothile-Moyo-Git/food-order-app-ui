@@ -15,11 +15,11 @@ function App() {
   return (
     <CartProvider>
       <div className="App">
-          <Header showModal={ setShowCartModal } />
+          <Header showModal={ setShowCartModal }/>
           <main>
             <Meals/>
           </main>
-          { showCartModal === true && <Modal showModal={ setShowCartModal } /> }
+          { showCartModal === true && <Modal showModal={ setShowCartModal }/> }
 
         <div className="animation-box"> 
           <ul className="box-area">
