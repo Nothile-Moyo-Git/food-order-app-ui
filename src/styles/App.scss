@@ -21,13 +21,10 @@
       overflow: hidden;
       background: white;
 
-      & li{
-        @include breakpoint(rotatedMobile){
-          animation: levitate_mobile_desktop_view 12s linear;
-          height: 300vh;
-        }
+      @include breakpoint(rotatedMobile){
+        height: 225vh;
       }
-
+    
       & li{
         position: absolute;
         top: 5%;
@@ -37,6 +34,11 @@
         height: 1.5rem;
         animation: levitate 12s linear infinite;
         border-radius: 2rem;
+
+        @include breakpoint(rotatedMobile){
+          animation: levitate_mobile_desktop_view 12s linear infinite;
+          height: 250vh;
+        }
 
         &:nth-child(1){
           left: 0%;

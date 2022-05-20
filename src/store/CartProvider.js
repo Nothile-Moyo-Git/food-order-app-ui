@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import CartContext from "./cart-context";
 
-
+// Note: State is the state we had before, action is what's been submitted to the dispatcher
 const cartReducer = (state, action) => {
 
     if( action.type === 'add' ){

@@ -232,17 +232,16 @@ $fade_in: fade-in 500ms linear;
 
   0%{ opacity: 0; }
   100%{ opacity: 1; }
-
 }
 
 // Breakpoints
 @mixin breakpoint($point) {
 
-    @if point == rotatedMobile{
-        @media ( max-height: 800px ) and ( max-width: 1500px ){ @content; }
+    @if $point == rotatedMobile{
+        @media ( max-height: 650px ) and ( max-width: 400px ){ @content; }
     }
 
-    @if $point == tablet{
+    @else if $point == tablet{
         @media ( min-width: 768px ){ @content; }
     }
 
