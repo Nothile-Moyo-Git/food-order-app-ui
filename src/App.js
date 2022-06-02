@@ -4,7 +4,7 @@ import Meals from './components/Meals/Meals';
 import Modal from './components/UI/Modal';
 import { useState } from "react";
 import CartProvider from './store/CartProvider';
-
+import AnimatedBackdrop from './components/UI/AnimatedBackdrop';
 
 function App() {
 
@@ -18,19 +18,9 @@ function App() {
           <Header showModal={ setShowCartModal }/>
           <main>
             <Meals/>
+            { showCartModal === true && <Modal showModal={ setShowCartModal }/> }
+            <AnimatedBackdrop/>
           </main>
-          { showCartModal === true && <Modal showModal={ setShowCartModal }/> }
-
-        <div className="animation-box"> 
-          <ul className="box-area">
-            <li> </li>
-            <li> </li>
-            <li> </li>
-            <li> </li>
-            <li> </li>
-            <li> </li>
-          </ul>
-        </div>
       </div>
 
     </CartProvider>

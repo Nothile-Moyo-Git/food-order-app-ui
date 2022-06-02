@@ -44,6 +44,8 @@ const Cart = (props) => {
     </ul> 
 
     const orderButtonHandler = () => {
+
+        props.displayCheckout(true);
  
         // Add the class to our element in order to animate it
         setClickedOrderButton(true);
@@ -54,7 +56,7 @@ const Cart = (props) => {
     }
 
     return(
-        <div className={props.className}>
+        <div className="modal">
             { cartItems }
             <div className="total total__amount">               
                 <span> Total Amount </span>

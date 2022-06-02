@@ -25,6 +25,10 @@
     box-shadow: $box_shadow_four;
     z-index: 30;
     animation: $slide_down;
+
+    &--checkout{
+      animation: 0;
+    }
   }
   
   @media (min-width: 768px) {
