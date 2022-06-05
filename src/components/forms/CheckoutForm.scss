@@ -1,1 +1,52 @@
 @import '../../styles/shared.scss';
+
+.checkout-form{
+    animation: fade-in 500ms linear;
+    display: flex;
+    width: 100%;
+
+    input, textarea{
+        color: white;
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 4px;
+        padding: 0.25rem 0rem;
+        margin-top: 0.5rem;
+    }
+
+    &__two-inputs{
+        display: flex;
+        flex-direction: column;
+        grid-column-gap: 2rem;
+        width: 100%;
+
+        @include breakpoint(tablet){
+            flex-direction: row;
+        }
+    }
+
+    &__input{
+        flex-basis: 100%;
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint(tablet){
+            flex-basis: calc(50% - 1rem);
+        }
+    }
+
+    &__text{
+        display: flex;
+        flex-direction: column;
+        flex-basis: 50%;
+        width: 50%;
+
+        @include breakpoint(tablet){
+            flex-basis: 100%;
+        }
+    }
+
+    &__textarea{
+
+    }
+}

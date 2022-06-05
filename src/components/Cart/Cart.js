@@ -1,11 +1,13 @@
 import React, { useState, useContext } from "react";
 import CartContext from "../../store/cart-context";
+import CheckoutForm from "../forms/CheckoutForm";
 import './Cart.scss';
 import CartItem from "./CartItem";
 
 const Cart = (props) => {
 
     const [clickedOrderButton, setClickedOrderButton] = useState(false);
+    const [showCheckoutForm, setShowCheckoutForm] = useState(false);
 
     const hideModal = () => { props.showModal(false); }
 
@@ -45,7 +47,7 @@ const Cart = (props) => {
 
     const orderButtonHandler = () => {
 
-        props.displayCheckout(true);
+        //setShowCheckoutForm(true);
  
         // Add the class to our element in order to animate it
         setClickedOrderButton(true);
@@ -55,8 +57,10 @@ const Cart = (props) => {
 
     }
 
-    return(
-        <div className="modal">
+    const checkoutForm = <CheckoutForm showCheckout={setShowCheckoutForm} className="checkout-form"/>;
+
+    const cartContent =             
+        <div>
             { cartItems }
             <div className="total total__amount">               
                 <span> Total Amount </span>
@@ -72,7 +76,12 @@ const Cart = (props) => {
                     </div> 
                 }
             </div>
-        </div>
+        </div>;
+
+    return(
+        <section className="modal">
+            { !showCheckoutForm ? cartContent : checkoutForm }
+        </section>
     );
 }
 

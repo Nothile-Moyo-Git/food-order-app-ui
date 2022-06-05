@@ -25,6 +25,7 @@
     box-shadow: $box_shadow_four;
     z-index: 30;
     animation: $slide_down;
+    transition: all 0.3s linear;
 
     &--checkout{
       animation: 0;
