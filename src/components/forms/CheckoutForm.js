@@ -2,12 +2,13 @@ import useInput from '../../hooks/useInput';
 import './CheckoutForm.scss';
 
 // Function to validate the name input
+// Functions must be calls when passed to a custom hook, not as expressions. Therefore we define them in a more vanilla way
 const validInput = (value) => { if(value.trim().length >= 3){ return true; } else { return false; } }
 
 // Function to validate phone number 
-const validPhone = (value) => { if(value.trim().length < 10){ return true; } else { return false; } }
+const validPhone = (value) => { if(value.trim().length <= 10){ return true; } else { return false; } }
 
-// Fucntion to use regular expressions to validate email address
+// Function to use regular expressions to validate email address
 const validEmail =  (emailAddress) =>{
 
     if (/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/.test(emailAddress)) 
@@ -39,12 +40,14 @@ const CheckoutForm = (props) => {
         value: email,
         updateValue: emailChangeHandler,
         blurValue: emailBlurHandler,
+        validValue: emailValid,
     } = useInput(validEmail);
 
     const {
         value: phone,
         updateValue: phoneChangeHandler,
-        blurValue: phoneBlurHandler
+        blurValue: phoneBlurHandler,
+        validValue: phoneValid,
     } = useInput(validPhone);
 
     const {
@@ -59,9 +62,12 @@ const CheckoutForm = (props) => {
 
     // JSX for our checkout form, we're using the values from our custom hook
     return(
-        <form method="post" className={`${props.className}`} onSubmit={ submitHandler }>
+        <section>
 
-            <div className="checkout-form__two-inputs">
+            <h2 className="checkout-title">Checkout</h2>
+
+            <form method="post" className={`${props.className}`} onSubmit={ submitHandler }>
+
                 <div className={`checkout-form__input ${!nameValid && 'checkout-form__invalid'}`}>
                     <label htmlFor="name">Name</label>
                     <input 
@@ -73,7 +79,7 @@ const CheckoutForm = (props) => {
                     />
                 </div>
 
-                <div className="checkout-form__input">
+                <div className={`checkout-form__input ${!emailValid && 'checkout-form__invalid'}`}>
                     <label htmlFor="email">Email</label>
                     <input 
                     type="email" 
@@ -83,31 +89,37 @@ const CheckoutForm = (props) => {
                     onBlur={emailBlurHandler}
                     />
                 </div>
-            </div>
 
-            <div className="checkout-form__number">
-                <label htmlFor="number">Phone Number</label>
-                <input
-                type="number"
-                id="number"
-                value={phone}
-                onChange={phoneChangeHandler}
-                onBlur={phoneBlurHandler}
-                />
-            </div>
+                <div className={`checkout-form__phone ${!phoneValid && 'checkout-form__invalid'}`}>
+                    <label htmlFor="number">Phone Number</label>
+                    <div className="checkout-form__phone-wrapper">
+                        <span>+44</span>
+                        <input
+                        type="number"
+                        id="number"
+                        value={phone}
+                        onChange={phoneChangeHandler}
+                        onBlur={phoneBlurHandler}
+                        />
+                    </div>
+                </div>
 
-            <div className="checkout-form__textarea">
-                <label htmlFor="requests">Requests</label>
-                <textarea
-                id="requests"
-                value={requests}
-                rows="5"
-                onChange={requestsChangeHandler}
-                onBlur={requestsBlurHandler}
-                />
-            </div>
+                <div className="checkout-form__input">
+                    <label htmlFor="requests">Requests</label>
+                    <textarea
+                    id="requests"
+                    value={requests}
+                    rows="5"
+                    onChange={requestsChangeHandler}
+                    onBlur={requestsBlurHandler}
+                    />
+                </div>
 
-        </form>
+                <input type="submit" className="checkout-form__submit"/>
+
+            </form>
+
+        </section>
     );
 }
 

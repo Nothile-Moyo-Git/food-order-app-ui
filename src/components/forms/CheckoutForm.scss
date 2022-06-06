@@ -5,48 +5,92 @@
     display: flex;
     width: 100%;
 
-    input, textarea{
+
+
+
+    &__input{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+
+        input, textarea{
+            color: white;
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 4px;
+            padding: 0.4rem 0rem;
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        @include breakpoint(tablet){
+            width: 80%;
+        }
+    }
+
+    &__phone{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+        margin-bottom: 1.5rem;
+
+        @include breakpoint(tablet){
+            width: 80%;
+        }
+    }
+
+    &__phone-wrapper{
+        display: flex;
+        border: 1px solid white;
+        border-radius: 4px;
+        margin-top: 0.5rem;
+        align-items: center;
+
+        input{
+            flex-grow: 1;
+            border: 0px;
+            margin: 0px;
+            margin-left: 0.35rem;
+            padding: 0.4rem 0rem;
+            background-color: transparent;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+    }
+
+    &__submit{
+        padding: 0.4rem 1rem;
+
         color: white;
         background-color: transparent;
         border: 1px solid white;
         border-radius: 4px;
-        padding: 0.25rem 0rem;
-        margin-top: 0.5rem;
-    }
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.15s linear;
 
-    &__two-inputs{
-        display: flex;
-        flex-direction: column;
-        grid-column-gap: 2rem;
-        width: 100%;
-
-        @include breakpoint(tablet){
-            flex-direction: row;
+        &:hover{
+            background-color: white;
+            color: $brand_color_four;
         }
     }
 
-    &__input{
-        flex-basis: 100%;
-        display: flex;
-        flex-direction: column;
+}
 
-        @include breakpoint(tablet){
-            flex-basis: calc(50% - 1rem);
-        }
-    }
-
-    &__text{
-        display: flex;
-        flex-direction: column;
-        flex-basis: 50%;
-        width: 50%;
-
-        @include breakpoint(tablet){
-            flex-basis: 100%;
-        }
-    }
-
-    &__textarea{
-
+.checkout-title{
+    animation: fade-in 500ms linear;
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+    
+    @include breakpoint(tablet){
+        width: 80%;
     }
 }

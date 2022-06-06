@@ -47,7 +47,7 @@ const Cart = (props) => {
 
     const orderButtonHandler = () => {
 
-        //setShowCheckoutForm(true);
+        // setShowCheckoutForm(true);
  
         // Add the class to our element in order to animate it
         setClickedOrderButton(true);
