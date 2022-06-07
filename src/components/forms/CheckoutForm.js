@@ -6,10 +6,10 @@ import './CheckoutForm.scss';
 const validInput = (value) => { if(value.trim().length >= 3){ return true; } else { return false; } }
 
 // Function to validate phone number 
-const validPhone = (value) => { if(value.trim().length <= 10){ return true; } else { return false; } }
+const validPhone = (value) => { if(value.trim().length >= 10){ return true; } else { return false; } }
 
 // Function to use regular expressions to validate email address
-const validEmail =  (emailAddress) =>{
+const validEmail = (emailAddress) =>{
 
     if (/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/.test(emailAddress)) 
       {
@@ -24,6 +24,9 @@ const validEmail =  (emailAddress) =>{
   
   }
 
+// Since we evaluate on every re-render, we use this to skip entries
+const skipValidation = () => { return true; }
+
 // Checkout form component
 const CheckoutForm = (props) => {
 
@@ -34,6 +37,8 @@ const CheckoutForm = (props) => {
         updateValue: nameChangeHandler,
         blurValue: nameBlurHandler,
         validValue: nameValid,
+        inputTouched: nameInputTouched,
+        resetInput: resetName
     } = useInput(validInput);
 
     const {
@@ -41,6 +46,8 @@ const CheckoutForm = (props) => {
         updateValue: emailChangeHandler,
         blurValue: emailBlurHandler,
         validValue: emailValid,
+        inputTouched: emailInputTouched,
+        resetInput: resetEmail
     } = useInput(validEmail);
 
     const {
@@ -48,17 +55,28 @@ const CheckoutForm = (props) => {
         updateValue: phoneChangeHandler,
         blurValue: phoneBlurHandler,
         validValue: phoneValid,
+        inputTouched: phoneInputTouched,
+        resetInput: resetPhone
     } = useInput(validPhone);
 
     const {
         value: requests,
         updateValue: requestsChangeHandler,
-        blurValue: requestsBlurHandler
-    } = useInput(validInput);
+        blurValue: requestsBlurHandler,
+        resetInput: resetRequests
+    } = useInput(skipValidation);
 
     const submitHandler = (event) => {
         event.preventDefault();
+
+        // Reset our inputs and set validate them so they're not checked and auto fail once reset
+        resetName();
+        resetEmail();
+        resetPhone();
+        resetRequests();
     }
+
+    const formValid = true;
 
     // JSX for our checkout form, we're using the values from our custom hook
     return(
@@ -68,7 +86,7 @@ const CheckoutForm = (props) => {
 
             <form method="post" className={`${props.className}`} onSubmit={ submitHandler }>
 
-                <div className={`checkout-form__input ${!nameValid && 'checkout-form__invalid'}`}>
+                <div className={`checkout-form__input ${!nameValid && 'checkout-form__input--invalid'}`}>
                     <label htmlFor="name">Name</label>
                     <input 
                     type="text" 
@@ -79,7 +97,7 @@ const CheckoutForm = (props) => {
                     />
                 </div>
 
-                <div className={`checkout-form__input ${!emailValid && 'checkout-form__invalid'}`}>
+                <div className={`checkout-form__input ${!emailValid && 'checkout-form__input--invalid'}`}>
                     <label htmlFor="email">Email</label>
                     <input 
                     type="email" 
@@ -90,9 +108,9 @@ const CheckoutForm = (props) => {
                     />
                 </div>
 
-                <div className={`checkout-form__phone ${!phoneValid && 'checkout-form__invalid'}`}>
+                <div className={`checkout-form__phone ${!phoneValid && 'checkout-form__phone--invalid'}`}>
                     <label htmlFor="number">Phone Number</label>
-                    <div className="checkout-form__phone-wrapper">
+                    <div className={`checkout-form__phone-wrapper ${!phoneValid && 'checkout-form__phone-wrapper--invalid'}`}>
                         <span>+44</span>
                         <input
                         type="number"
@@ -115,7 +133,7 @@ const CheckoutForm = (props) => {
                     />
                 </div>
 
-                <input type="submit" className="checkout-form__submit"/>
+                <input type="submit" className={`checkout-form__submit ${formValid && 'checkout-form__submit--valid'}`}/>
 
             </form>
 

@@ -5,26 +5,39 @@
     display: flex;
     width: 100%;
 
-
-
-
     &__input{
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         margin-bottom: 1.5rem;
+        transition: all 0.15s linear;
 
         input, textarea{
-            color: white;
+            color: $brand_color_one;
             background-color: transparent;
-            border: 1px solid white;
+            border: 2px solid $brand_color_one;
             border-radius: 4px;
             padding: 0.4rem 0rem;
             margin-top: 0.5rem;
             font-size: 1rem;
             font-weight: bold;
             font-family: Helvetica, Arial, sans-serif;
+        }
+
+        label{
+            color: $brand_color_one;
+        }
+
+        &--invalid{
+            input, textarea{
+                color: white;
+                border-color: white;
+            }
+
+            label{
+                color: white;
+            }
         }
 
         @include breakpoint(tablet){
@@ -42,14 +55,19 @@
         @include breakpoint(tablet){
             width: 80%;
         }
+
+        &--invalid{
+
+        }
     }
 
     &__phone-wrapper{
         display: flex;
-        border: 1px solid white;
+        border: 2px solid $brand_color_one;
         border-radius: 4px;
         margin-top: 0.5rem;
         align-items: center;
+        color: $brand_color_one;
 
         input{
             flex-grow: 1;
@@ -58,27 +76,45 @@
             margin-left: 0.35rem;
             padding: 0.4rem 0rem;
             background-color: transparent;
-            color: white;
+            color: $brand_color_one;
             font-size: 1rem;
             font-weight: bold;
             font-family: Helvetica, Arial, sans-serif;
         }
+
+        &--invalid{
+            border-color: white;
+            color: white;
+
+            input{
+                color: white;
+            }
+        }
+
     }
 
     &__submit{
         padding: 0.4rem 1rem;
-
         color: white;
         background-color: transparent;
-        border: 1px solid white;
+        border: 2px solid white;
         border-radius: 4px;
         font-size: 1rem;
         cursor: pointer;
         transition: all 0.15s linear;
 
-        &:hover{
+        &:hover, &:focus{
             background-color: white;
             color: $brand_color_four;
+        }
+
+        &--valid{
+            border-color: $brand_color_one;
+            color: $brand_color_one;
+
+            &:hover, &:focus{
+                background-color: $brand_color_one;
+            }
         }
     }
 
