@@ -36,27 +36,27 @@ const CheckoutForm = (props) => {
         value: name, 
         updateValue: nameChangeHandler,
         blurValue: nameBlurHandler,
-        validValue: nameValid,
-        inputTouched: nameInputTouched,
-        resetInput: resetName
+        resetInput: resetName,
+        invalid: nameInputInvalid,
+        isValueValid: nameValid
     } = useInput(validInput);
 
     const {
         value: email,
         updateValue: emailChangeHandler,
         blurValue: emailBlurHandler,
-        validValue: emailValid,
-        inputTouched: emailInputTouched,
-        resetInput: resetEmail
+        resetInput: resetEmail,
+        invalid: emailInputInvalid,
+        isValueValid: emailValid
     } = useInput(validEmail);
 
     const {
         value: phone,
         updateValue: phoneChangeHandler,
         blurValue: phoneBlurHandler,
-        validValue: phoneValid,
-        inputTouched: phoneInputTouched,
-        resetInput: resetPhone
+        resetInput: resetPhone,
+        invalid: phoneInputInvalid,
+        isValueValid: phoneValid
     } = useInput(validPhone);
 
     const {
@@ -76,7 +76,7 @@ const CheckoutForm = (props) => {
         resetRequests();
     }
 
-    const formValid = true;
+    const formValid = nameValid && emailValid && phoneValid;
 
     // JSX for our checkout form, we're using the values from our custom hook
     return(
@@ -86,8 +86,8 @@ const CheckoutForm = (props) => {
 
             <form method="post" className={`${props.className}`} onSubmit={ submitHandler }>
 
-                <div className={`checkout-form__input ${!nameValid && 'checkout-form__input--invalid'}`}>
-                    <label htmlFor="name">Name</label>
+                <div className={`checkout-form__input ${ nameInputInvalid && 'checkout-form__input--invalid' }`}>
+                    <label htmlFor="name">{`${ nameInputInvalid ? 'Error: Name should be longer than 3 characters' : 'Name'}`}</label>
                     <input 
                     type="text" 
                     id="name"
@@ -97,8 +97,8 @@ const CheckoutForm = (props) => {
                     />
                 </div>
 
-                <div className={`checkout-form__input ${!emailValid && 'checkout-form__input--invalid'}`}>
-                    <label htmlFor="email">Email</label>
+                <div className={`checkout-form__input ${ emailInputInvalid && 'checkout-form__input--invalid' }`}>
+                    <label htmlFor="email">{`${ emailInputInvalid ? 'Error: Email is invalid' : 'Email' }`}</label>
                     <input 
                     type="email" 
                     id="email"
@@ -108,9 +108,9 @@ const CheckoutForm = (props) => {
                     />
                 </div>
 
-                <div className={`checkout-form__phone ${!phoneValid && 'checkout-form__phone--invalid'}`}>
-                    <label htmlFor="number">Phone Number</label>
-                    <div className={`checkout-form__phone-wrapper ${!phoneValid && 'checkout-form__phone-wrapper--invalid'}`}>
+                <div className={`checkout-form__phone ${ phoneInputInvalid && 'checkout-form__phone--invalid' }`}>
+                    <label htmlFor="number">{`${ phoneInputInvalid ? 'Error: Phone Number Must be at least 10 characters' : 'Phone Number:' }`}</label>
+                    <div className={`checkout-form__phone-wrapper ${ phoneInputInvalid && 'checkout-form__phone-wrapper--invalid' }`}>
                         <span>+44</span>
                         <input
                         type="number"

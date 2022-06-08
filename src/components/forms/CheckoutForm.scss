@@ -37,6 +37,7 @@
 
             label{
                 color: white;
+                transition: all 0.15s linear;
             }
         }
 
@@ -56,8 +57,21 @@
             width: 80%;
         }
 
-        &--invalid{
+        label{
+            transition: all 0.15s linear;
+            color: $brand_color_one;
+        }
 
+        &--invalid{
+            input, textarea{
+                color: white;
+                border-color: white;
+            }
+
+            label{
+                color: white;
+                transition: all 0.15s linear;
+            } 
         }
     }
 
@@ -95,25 +109,21 @@
 
     &__submit{
         padding: 0.4rem 1rem;
-        color: white;
+        color: $brand_color_fifteen;
         background-color: transparent;
-        border: 2px solid white;
+        border: 2px solid $brand_color_fifteen;
         border-radius: 4px;
         font-size: 1rem;
-        cursor: pointer;
         transition: all 0.15s linear;
-
-        &:hover, &:focus{
-            background-color: white;
-            color: $brand_color_four;
-        }
 
         &--valid{
             border-color: $brand_color_one;
             color: $brand_color_one;
+            cursor: pointer;
 
             &:hover, &:focus{
-                background-color: $brand_color_one;
+                background-color: rgba($brand_color_one, 0.3);
+                color: $brand_color_one;
             }
         }
     }

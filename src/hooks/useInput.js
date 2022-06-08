@@ -27,6 +27,8 @@ const useInput = (validationFunction) => {
     // This serves 2 purposes, it's more optimal than setting and updating states, and it also reflects the currently value inside of state
     const isValid = validationFunction(enteredValue);
 
+    const inputInvalid = !isValid && isTouched;
+
     // Return an object of key value pairs which we assign to our variables in checkout form
     // The keys for these pairs are used, and the data has a new allocation in memory upon instantiation in another variable
     return(
@@ -34,9 +36,9 @@ const useInput = (validationFunction) => {
             value: enteredValue,
             updateValue : valueChangeHandler,
             blurValue : valueBlurHandler,
-            validValue: isValid,
-            inputTouched: isTouched,
-            resetInput: resetInput
+            resetInput: resetInput,
+            isValueValid: isValid,
+            invalid: inputInvalid
         }
     );
 }
