@@ -78,6 +78,7 @@ const CheckoutForm = (props) => {
 
     const formValid = nameValid && emailValid && phoneValid;
 
+
     // JSX for our checkout form, we're using the values from our custom hook
     return(
         <section>
@@ -89,22 +90,22 @@ const CheckoutForm = (props) => {
                 <div className={`checkout-form__input ${ nameInputInvalid && 'checkout-form__input--invalid' }`}>
                     <label htmlFor="name">{`${ nameInputInvalid ? 'Error: Name should be longer than 3 characters' : 'Name'}`}</label>
                     <input 
-                    type="text" 
-                    id="name"
-                    value={name}
-                    onChange={nameChangeHandler}
-                    onBlur={nameBlurHandler}
+                        type="text" 
+                        id="name"
+                        value={name}
+                        onChange={nameChangeHandler}
+                        onBlur={nameBlurHandler}
                     />
                 </div>
 
                 <div className={`checkout-form__input ${ emailInputInvalid && 'checkout-form__input--invalid' }`}>
                     <label htmlFor="email">{`${ emailInputInvalid ? 'Error: Email is invalid' : 'Email' }`}</label>
                     <input 
-                    type="email" 
-                    id="email"
-                    value={email}
-                    onChange={emailChangeHandler}
-                    onBlur={emailBlurHandler}
+                        type="email" 
+                        id="email"
+                        value={email}
+                        onChange={emailChangeHandler}
+                        onBlur={emailBlurHandler}
                     />
                 </div>
 
@@ -113,11 +114,11 @@ const CheckoutForm = (props) => {
                     <div className={`checkout-form__phone-wrapper ${ phoneInputInvalid && 'checkout-form__phone-wrapper--invalid' }`}>
                         <span>+44</span>
                         <input
-                        type="number"
-                        id="number"
-                        value={phone}
-                        onChange={phoneChangeHandler}
-                        onBlur={phoneBlurHandler}
+                            type="number"
+                            id="number"
+                            value={phone}
+                            onChange={phoneChangeHandler}
+                            onBlur={phoneBlurHandler}
                         />
                     </div>
                 </div>
@@ -125,11 +126,11 @@ const CheckoutForm = (props) => {
                 <div className="checkout-form__input">
                     <label htmlFor="requests">Requests</label>
                     <textarea
-                    id="requests"
-                    value={requests}
-                    rows="5"
-                    onChange={requestsChangeHandler}
-                    onBlur={requestsBlurHandler}
+                        id="requests"
+                        value={requests}
+                        rows="5"
+                        onChange={requestsChangeHandler}
+                        onBlur={requestsBlurHandler}
                     />
                 </div>
 
