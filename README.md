@@ -1,5 +1,9 @@
 ## Dev Notes: This project was built using React.jS and Dart SASS.
-## You only need to install your package depedencies in order to run this app
+
+### Installation
+Install packages: npm install
+Reduce package deficiencies: npm audit fix
+Run app locally: npm run start
 
 This App is a food order App. It's built using React.js and SASS. It currently has a backend hooked up to firebase which stores the meals. We filter them through using Object.keys and then we map this and create a new array which we iterate through in order to create our menu.
 
